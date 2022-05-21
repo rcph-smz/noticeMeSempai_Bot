@@ -101,4 +101,4 @@ Help Me Sempai :  _Innocent command ૮₍ ˃ ⤙ ˂ ₎ა_
     if message.content == "what's your phone number":
       await message.channel.send("09"+str(randint(0,10))+str(randint(0,10))+str(randint(0,10))+str(randint(0,10))+str(randint(0,10))+str(randint(0,10))+str(randint(0,10))+str(randint(0,10))+str(randint(0,10)))
 
-client.run("OTY0Mzg2NzI2MzcyMDY1Mjgw.GUPrlL.btjyfDKAoBEq6ZBrawzDOeQZbI3_UXrCbbKXik")
+client.run(os.environ["noticeMe"])

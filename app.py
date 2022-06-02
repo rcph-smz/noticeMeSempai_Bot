@@ -57,19 +57,30 @@ async def on_message(message):
     # help
     if message.content.lower() == 'help':
       await message.channel.send("""
-Help Me Sempai :  _Innocent command ૮₍ ˃ ⤙ ˂ ₎ა_ 
+Help Me Sempai :  _Innocent command ૮₍ ˃ ⤙ ˂ ₎ა_  
 
-  * add - adding your key-value preferences 
-    ex:
-      add <nameofkey> - <value>
-      add NoticeMe - OkayFine ૮₍ ˃ ⤙ ˂ ₎ა
-        // her response is OkayFine ૮₍ ˃ ⤙ ˂ ₎ა      
-  * ? - ask sempai for question
-    ex: 
-      <question>?
-      can i court you? 
-        // her response might be "Yesss ~","HuHuHu!!!","_Ugghhh_","No...","_?_"
+translate <language> - <wants to translate>
+
+# im going go add more features
                                 """)
+                                   
+
+  # * add<not_available> - adding your key-value preferences 
+  #   ex:
+  #     add <nameofkey> - <value>
+  #     add NoticeMe - OkayFine ૮₍ ˃ ⤙ ˂ ₎ა
+  #       // her response is OkayFine ૮₍ ˃ ⤙ ˂ ₎ა 
+  # * ? - ask sempai for question
+  #   ex: 
+  #     <question>?
+  #     can i court you? 
+  #       // her response might be "Yesss ~","HuHuHu!!!","_Ugghhh_","No...","_?_"
+
+
+
+
+
+
     # translator
       # pip install googletrans==4.0.0rc1
 

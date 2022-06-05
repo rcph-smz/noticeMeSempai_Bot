@@ -61,7 +61,9 @@ Help Me Sempai :  _Innocent command ૮₍ ˃ ⤙ ˂ ₎ა_
 
 translate <language> - <wants to translate>
 
-# im going go add more features
+# I'm going go add more features
+
+# and this bot has a tonnes of bugs
                                 """)
                                    
 

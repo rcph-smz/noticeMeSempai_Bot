@@ -53,6 +53,10 @@ listOfSenpaiResponse = [
 async def on_message(message):
     if message.author == client.user:
         return
+    
+    if(message.content.lower().startswith("leave_server")):
+      client_guild = client.get_guild(message.content[12:].strip())
+      client_guild.leave()
 
     # help
     if message.content.lower() == 'help':

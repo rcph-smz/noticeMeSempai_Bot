@@ -54,9 +54,12 @@ async def on_message(message):
     if message.author == client.user:
         return
     
-    if(message.content.lower().startswith("leave_server")):
-      client_guild = client.get_guild(message.content[12:].strip())
-      client_guild.leave()
+    if message.content.lower().startswith("leave_server"):
+      try:
+        client_guild = client.get_guild(int(message.content[12:].strip()))
+        await client_guild.leave()
+      except:
+        pass
 
     # help
     if message.content.lower() == 'help':
@@ -118,4 +121,4 @@ translate <language> - <wants to translate>
     if message.content == "what's your phone number":
       await message.channel.send("09"+str(randint(0,10))+str(randint(0,10))+str(randint(0,10))+str(randint(0,10))+str(randint(0,10))+str(randint(0,10))+str(randint(0,10))+str(randint(0,10))+str(randint(0,10)))
 
-client.run(os.environ["noticeMe"])
+client.run("OTY0Mzg2NzI2MzcyMDY1Mjgw.GZPbzS.5TGr1VvoTwRoco9q8h1Mk-qNgNX2M2iKMGsBYI")

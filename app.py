@@ -68,6 +68,10 @@ Help Me Sempai :  _Innocent command ૮₍ ˃ ⤙ ˂ ₎ა_
 
 translate <language> - <wants to translate>
 
+leave_server <server id>
+
+say <say what you want>
+
 # I'm going go add more features
 
 # and this bot has a tonnes of bugs

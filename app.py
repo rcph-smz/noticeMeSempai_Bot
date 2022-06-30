@@ -53,4 +53,4 @@ try:
     for i in noticeMe.readlines():
       client.run(i)
 except:
-  client.run(os.environ.noticeMe)
+  client.run(os.environ["noticeMe"])

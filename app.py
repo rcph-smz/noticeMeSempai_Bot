@@ -47,6 +47,5 @@ async def help(ctx):
     em.add_field(name=flist[0],value=flist[1])
 
   await ctx.send(embed = em)
-
         
 client.run("OTY0Mzg2NzI2MzcyMDY1Mjgw.GZPbzS.5TGr1VvoTwRoco9q8h1Mk-qNgNX2M2iKMGsBYI")

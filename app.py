@@ -54,5 +54,3 @@ try:
       client.run(i)
 except:
   client.run(os.environ.noticeMe)
-        
-

@@ -49,7 +49,7 @@ async def help(ctx):
   await ctx.send(embed = em)
 
 try:
-  with open("./token.txt","r") as noticeMe:
+  with open("./noticeMe.txt","r") as noticeMe:
     for i in noticeMe.readlines():
       client.run(i)
 except:

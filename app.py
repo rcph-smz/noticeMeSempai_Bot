@@ -1,5 +1,3 @@
-from tarfile import NUL
-from turtle import color
 import discord
 from discord.ext import commands
 import os

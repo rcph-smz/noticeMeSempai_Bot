@@ -1,7 +1,10 @@
+from tarfile import NUL
+from turtle import color
 import discord
 from discord.ext import commands
 import os
 from random import randint
+import random
 from googletrans import Translator
 # import pymongo
 
@@ -38,7 +41,7 @@ async def translate(ctx, language , *args):
 async def say(ctx,*message):
   await ctx.send(" ".join(message))
 
-field_list = [["guild_id","./get guild_id"],["author","./get author"],["ping","./get ping"],["translate","./translate <language> <argument>"],["say","./say <argument/message>"]]
+field_list = [["guild_id","./get guild_id"],["author","./get author"],["ping","./get ping"],["translate","./translate <language> <argument>"],["say","./say <argument/message>"],["hold_book","./hold_book"]]
 @client.group(invoke_without_command=True)
 async def help(ctx):
   em = discord.Embed(title = "commands", value = "use ./help command to see all stuff", color = discord.Color.from_rgb(198,175,165))
@@ -48,6 +51,14 @@ async def help(ctx):
 
   await ctx.send(embed = em)
 
+@client.command()
+async def hold_book(ctx):
+  em = discord.Embed(color = discord.Color.from_rgb(198,175,165))
+  with open("./anime_holding_a_book.txt","r") as bk:
+    em.set_image(url=f'https://rcph-smz.github.io/Anime-Girls-Holding-Programming-Books/{random.choice(bk.readlines())}')
+
+    await ctx.send(embed = em)
+    
 try:
   with open("./noticeMe.txt","r") as noticeMe:
     for i in noticeMe.readlines():

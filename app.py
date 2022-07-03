@@ -22,7 +22,7 @@ req_quote = requests.get("https://type.fit/api/quotes")
 
 def get_command(ctx,k,i):
   index = get_list.index(k)
-  ctx_list = [ctx.guild.id,ctx.author,f'{round(client.latency * 1000)}ms',random.choice(req_quote.json())['text'],"https://rcph-smz.github.io/noticeMeSempai_Bot/preview.html"]
+  ctx_list = [ctx.guild.id,ctx.author,f'{round(client.latency * 1000)}ms',random.choice(req_quote.json())['text'],"https://notice-me-sempai-bot.herokuapp.com/preview.html"]
 
   return ctx_list[index]
   
@@ -50,8 +50,8 @@ async def help(ctx):
 
   for flist in field_list:
     em.add_field(name=flist[0],value=flist[1],inline=False)
-  with open("./anime_holding_a_book.txt","r") as bk:
-    em.set_thumbnail(url=f'https://rcph-smz.github.io/Anime-Girls-Holding-Programming-Books/{random.choice(bk.readlines())}')
+
+  em.set_thumbnail(url=ctx.author.avatar_url)
   em.set_author(name=f'{ctx.author} wants help')
   em.set_footer(text=
   """

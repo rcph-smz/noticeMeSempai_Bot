@@ -1,3 +1,4 @@
+from math import fabs
 import discord
 from discord.ext import commands
 import os
@@ -48,7 +49,17 @@ async def help(ctx):
   em = discord.Embed(title = "commands", value = "use ./help command to see all stuff", color = discord.Color.from_rgb(198,175,165))
 
   for flist in field_list:
-    em.add_field(name=flist[0],value=flist[1],inline=True)
+    em.add_field(name=flist[0],value=flist[1],inline=False)
+  with open("./anime_holding_a_book.txt","r") as bk:
+    em.set_thumbnail(url=f'https://rcph-smz.github.io/Anime-Girls-Holding-Programming-Books/{random.choice(bk.readlines())}')
+  em.set_author(name=f'{ctx.author} wants help')
+  em.set_footer(text=
+  """
+
+  ------------------- cutie ~ ヾ(≧▽≦*)o -------------------
+  
+  """
+  )
 
   await ctx.send(embed = em)
 

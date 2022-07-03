@@ -1,1 +1,1 @@
-# noticeMeSempai_Bot 
+* **noticeMeSempai_Bot cutie ~ ヾ(≧▽≦*)o** 

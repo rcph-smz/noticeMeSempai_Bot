@@ -15,13 +15,13 @@ async def on_ready():
   print(f'I have been login as {client.user}')
 
 
-get_list = ["guild_id","author","ping","quote"]
+get_list = ["guild_id","author","ping","quote","hold_book"]
 
 req = requests.get("https://type.fit/api/quotes")
 
 def get_command(ctx,k,i):
   index = get_list.index(k)
-  ctx_list = [ctx.guild.id,ctx.author,f'{round(client.latency * 1000)}ms',random.choice(req.json())['text']]
+  ctx_list = [ctx.guild.id,ctx.author,f'{round(client.latency * 1000)}ms',random.choice(req.json())['text'],"https://rcph-smz.github.io/noticeMeSempai_Bot/preview.html"]
 
   return ctx_list[index]
   

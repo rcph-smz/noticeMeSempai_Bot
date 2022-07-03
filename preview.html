@@ -146,8 +146,9 @@
     </div>
 </body>
 <script>
-
-    document.querySelector('meta[name="description"]').setAttribute("content", "cutie ~ ヾ(≧▽≦*)o")
+    function randint(min,max){
+        return Math.floor(Math.random() * (max - min)) + min
+    }
 
     const folderViewName = "https://rcph-smz.github.io/Anime-Girls-Holding-Programming-Books/"
 
@@ -670,7 +671,10 @@
 "VHDL/Frederica_Greenhill_Holding_Free_Range_VHDL.png ",
 "WebGL/Naru_and_Hana_from_Hanayamata_WebGL_par_la_pratique(french_book).png ",
 "Visual Basic/Hirasawa_Yui_With_VBA_2008.png "
-    ];
+    ]
+    
+    document.querySelector('meta[property="og:description"]').setAttribute("content", "cutie ~ ヾ(≧▽≦*)o")
+    document.querySelector('meta[property="og:image"]').setAttribute("content",`https://rcph-smz.github.io/Anime-Girls-Holding-Programming-Books/${imagelist[randint(0,imagelist.length)]}`)
 
     //rotateView
     let imageRotation = 0;

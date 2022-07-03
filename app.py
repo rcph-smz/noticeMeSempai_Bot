@@ -48,7 +48,7 @@ async def help(ctx):
   em = discord.Embed(title = "commands", value = "use ./help command to see all stuff", color = discord.Color.from_rgb(198,175,165))
 
   for flist in field_list:
-    em.add_field(name=flist[0],value=flist[1])
+    em.add_field(name=flist[0],value=flist[1],inline=True)
 
   await ctx.send(embed = em)
 

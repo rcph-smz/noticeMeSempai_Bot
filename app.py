@@ -1,4 +1,3 @@
-from math import fabs
 import discord
 from discord.ext import commands
 import os
@@ -22,7 +21,7 @@ req_quote = requests.get("https://type.fit/api/quotes")
 
 def get_command(ctx,k,i):
   index = get_list.index(k)
-  ctx_list = [ctx.guild.id,ctx.author,f'{round(client.latency * 1000)}ms',random.choice(req_quote.json())['text'],"https://notice-me-sempai-bot.herokuapp.com/preview.html"]
+  ctx_list = [ctx.guild.id,ctx.author,f'{round(client.latency * 1000)}ms',random.choice(req_quote.json())['text'],"https://rcph-smz.github.io/noticeMeSempai_Bot/preview.html"]
 
   return ctx_list[index]
   

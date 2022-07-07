@@ -44,26 +44,6 @@
             font-style: oblique;
             font-family: Arial, Helvetica, sans-serif;
         }
-        .redirect_preview {
-            position: fixed;
-            z-index: auto;
-            top: 0;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100vw;
-
-            padding: 10px;
-            font-size: 1.5em;
-            font-weight: 700;
-            font-family: monospace;
-            font-style: oblique;
-            text-shadow: 1px 1px 1px black;
-
-            background-color: rgba(255, 192, 203, 0.4);
-            color: azure;
-        }
     </style>
 </head>
 <body>
@@ -73,15 +53,13 @@
     <script>
         const body = document.body
 
-        const redirect_preview = document.createElement("div")
-        redirect_preview.setAttribute("class","redirect_preview")
-        redirect_preview.textContent = "Want to see them?"
-        redirect_preview.addEventListener("click",() => {
+        const noticeMe = document.querySelector(".noticeMe")
+        noticeMe.addEventListener("click",() => {
             location.replace("./preview.html")
         })
 
         setTimeout(() => {
-            body.appendChild(redirect_preview)
+            noticeMe.textContent = "Redirecting ... "
         }, 2500);
         setTimeout(() => {
             location.replace("./preview.html")

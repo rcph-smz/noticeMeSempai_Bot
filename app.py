@@ -56,7 +56,8 @@ field_list = [
   ["say","./say <argument/message>"],
   ["hold_book","./hold_book"],
   ["quote","./get quote"],
-  ["preview hold_book","./get hold_book"]
+  ["preview hold_book","./get hold_book"],
+  ["find yt_streams link","./yt_link <youtube link>"]
 ]
 @client.group(invoke_without_command=True)
 async def help(ctx):
@@ -85,17 +86,17 @@ async def hold_book(ctx):
 
     await ctx.send(embed = em)
 
-@client.command()
-async def join(ctx):
-  channel = ctx.author.voice.channel
-  await channel.connect()
+# @client.command()
+# async def join(ctx):
+#   channel = ctx.author.voice.channel
+#   await channel.connect()
+
+# @client.command()
+# async def leave(ctx):
+#   await ctx.voice_client.disconnect()
 
 @client.command()
-async def leave(ctx):
-  await ctx.voice_client.disconnect()
-
-@client.command()
-async def play(ctx,url):
+async def yt_link(ctx,url):
   yt = YouTube(url)
   yt.title
   yt.thumbnail_url

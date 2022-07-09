@@ -2,3 +2,4 @@ googletrans==4.0.0rc1
 discord==1.7.3
 discord.py==1.7.3
 requests==2.27.1
+pytube==12.1.0

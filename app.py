@@ -1,10 +1,12 @@
 import discord
 from discord.ext import commands
+from discord import FFmpegPCMAudio
 import os
 from random import randint
 import random
 from googletrans import Translator
 import requests
+from pytube import YouTube
 # import pymongo
 
 client = commands.Bot(command_prefix="./")
@@ -69,7 +71,22 @@ async def hold_book(ctx):
     em.set_image(url=f'https://rcph-smz.github.io/Anime-Girls-Holding-Programming-Books/{random.choice(bk.readlines())}')
 
     await ctx.send(embed = em)
-    
+
+@client.command()
+async def join(ctx):
+  channel = ctx.author.voice.channel
+  await channel.connect()
+
+@client.command()
+async def leave(ctx):
+  await ctx.voice_client.disconnect()
+
+@client.command()
+async def play(ctx,url):
+  yt = YouTube(url)
+  yt.title
+  yt.thumbnail_url
+  await ctx.send(f'{yt.streams.get_highest_resolution().url}')
 try:
   with open("./noticeMe.txt","r") as noticeMe:
     for i in noticeMe.readlines():

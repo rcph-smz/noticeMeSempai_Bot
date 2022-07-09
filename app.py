@@ -23,12 +23,16 @@ req_quote = requests.get("https://type.fit/api/quotes")
 
 def get_command(ctx,k,i):
   index = get_list.index(k)
-  ctx_list = [ctx.guild.id,ctx.author,f'{round(client.latency * 1000)}ms',random.choice(req_quote.json())['text'],"https://rcph-smz.github.io/noticeMeSempai_Bot/preview.html"]
+  ctx_list = [
+    ctx.guild.id,ctx.author,
+    f'{round(client.latency * 1000)}ms',
+    random.choice(req_quote.json())['text'],
+    "https://rcph-smz.github.io/noticeMeSempai_Bot/preview.html"
+  ]
 
   return ctx_list[index]
   
   
-
 @client.command()
 async def get(ctx, *args):
   for i in args:
@@ -44,7 +48,16 @@ async def translate(ctx, language , *args):
 async def say(ctx,*message):
   await ctx.send(" ".join(message))
 
-field_list = [["guild_id","./get guild_id"],["author","./get author"],["ping","./get ping"],["translate","./translate <language> <argument>"],["say","./say <argument/message>"],["hold_book","./hold_book"],["quote","./get quote"],["preview hold_book","./get hold_book"]]
+field_list = [
+  ["guild_id","./get guild_id"],
+  ["author","./get author"],
+  ["ping","./get ping"],
+  ["translate","./translate <language> <argument>"],
+  ["say","./say <argument/message>"],
+  ["hold_book","./hold_book"],
+  ["quote","./get quote"],
+  ["preview hold_book","./get hold_book"]
+]
 @client.group(invoke_without_command=True)
 async def help(ctx):
   em = discord.Embed(title = "commands", value = "use ./help command to see all stuff", color = discord.Color.from_rgb(198,175,165))
